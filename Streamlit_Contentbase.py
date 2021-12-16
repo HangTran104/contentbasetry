@@ -9,7 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 
 
-link_source = '/content/drive/MyDrive/LDS0_k271_TranThiThuHang/Báo Cáo (1)/products.csv'
+link_source = 'https://drive.google.com/drive/folders/1z6NDNbrJRfLV9DUJQQVeVa0WaHRaECd5'
 
 link_product = link_source + '4/1AX4XfWgwfhqkJLJVx_Q-_O45QKcVpA24lU4MBLdguAmIdvjuJj3bHMiOy58' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
 #--------------
