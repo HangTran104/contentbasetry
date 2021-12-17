@@ -12,14 +12,12 @@ from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 ## data
 link_source = 'https://drive.google.com/uc?export=download&id='
 
-link_product = link_source + '4/1AX4XfWijaHVNBWdZtIBd9bv8GCxFJSl9HnwwYHFMHA8GdDvXNKlZ6HoyuF0' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
+link_product = link_source + '1FXITqJQrcnzdz1672YR5eBaheaEa2SuC' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
 #--------------
 # Load data
 @st.cache
 def load_products():
     return pd.read_csv(link_product)
-
-
 
 # @st.cache
 # def load_data():
