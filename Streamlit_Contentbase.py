@@ -9,19 +9,22 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 
 
-link_source = 'https://drive.google.com/drive/folders/1z6NDNbrJRfLV9DUJQQVeVa0WaHRaECd5'
+## data
+link_source = 'https://drive.google.com/uc?export=download&id='
 
-link_product = link_source + '4/1AX4XfWgwfhqkJLJVx_Q-_O45QKcVpA24lU4MBLdguAmIdvjuJj3bHMiOy58' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
+link_product = link_source + '4/1AX4XfWijaHVNBWdZtIBd9bv8GCxFJSl9HnwwYHFMHA8GdDvXNKlZ6HoyuF0' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
 #--------------
 # Load data
 @st.cache
 def load_products():
     return pd.read_csv(link_product)
-# Load dataframe
+
+
+
 # @st.cache
 # def load_data():
 #     return pd.read_csv('products.csv', index_col='Unnamed: 0')
-# data = load_data('products.csv')
+# data = load_data()
 # print(data.info())
 # Data preprocessing
 alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -141,20 +144,17 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
                 col1, col2, col3 = st.beta_columns([1,1,1])
 
                 with col1:
-                    st.write("")
                     product_in_col(0,result)
                 with col2:
                     product_in_col(1,result)
-
                 with col3:
-                    product_in_col(2,result)                
+                    product_in_col(2,result)
+
                 col4, col5, col6 = st.beta_columns([1,1,1])
                 with col4:
-                    st.write("")
                     product_in_col(3,result)
                 with col5:
                     product_in_col(4,result)
-
                 with col6:
                     product_in_col(5,result)
         # st.subheader("Recommend Base on product name and price")
