@@ -21,19 +21,19 @@ def load_products():
 
 
 ## stopwords file
-alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-link_s = 'https://drive.google.com/uc?export=download&id='
+# alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+# link_s = 'https://drive.google.com/uc?export=download&id='
 
-link_sw = link_source + '1sf9lB6lX4MSluPM59zaqmCAfCyF1X1QH' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
+# link_sw = link_s + '1sf9lB6lX4MSluPM59zaqmCAfCyF1X1QH' #https://drive.google.com/file/d/1QGEVPuV34xIfZMadexbnu3u1o4L_heYz/view?usp=sharing
 #--------------
-# Load data
-@st.cache
-def load_sw():
-    with open(link_sw, 'r', encoding = 'utf-8') as file:
-        stop_words=file.read()
-        stop_words = stop_words.split('\n')
-        stop_words.extend(alphabet_list)
-    return stop_words
+# # Load data
+# @st.cache
+# def load_sw():
+#     with open(link_sw, 'r', encoding = 'utf-8') as file:
+#         stop_words=file.read()
+#         stop_words = stop_words.split('\n')
+#         stop_words.extend(alphabet_list)
+#     return stop_words
 
 
 # @st.cache
@@ -42,13 +42,13 @@ def load_sw():
 # data = load_data()
 # # print(data.info())
 # # Data preprocessing
-# alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-# STOP_WORD_FILE = 'vietnamese-stopwords.txt'
-# with open(STOP_WORD_FILE, 'r', encoding = 'utf-8') as file:
-#     stop_words = file.read()
-#     stop_words = stop_words.split('\n')
-#     stop_words.extend(alphabet_list)
-# stop_words.extend(alphabet_list)
+alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+STOP_WORD_FILE = 'vietnamese-stopwords.txt'
+with open(STOP_WORD_FILE, 'r', encoding = 'utf-8') as file:
+    stop_words = file.read()
+    stop_words = stop_words.split('\n')
+    stop_words.extend(alphabet_list)
+stop_words.extend(alphabet_list)
 # function xử lý chuỗi kỹ tự remove các ký tự đặc biệt
 def remove_char(text):
     text = str(text)
@@ -178,6 +178,6 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
 if __name__=='__main__':
     # data = load_data()
     data = load_products()
-    stop_words = load_sw()
+    # stop_words = load_sw()
     cosim = tfidf_cosim(data)
     main()
