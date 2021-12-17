@@ -161,6 +161,7 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
 
 
 if __name__=='__main__':
-    data = load_data()
+    # data = load_data()
+    data = load_products()
     cosim = tfidf_cosim(data)
     main()
